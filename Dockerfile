@@ -14,10 +14,11 @@ RUN mkdir /go
 ENV GOPATH /go
 ENV PATH $PATH:$GOPATH/bin
 
+RUN apt-get install -y git
+
 RUN go get github.com/astaxie/beego
 RUN go get github.com/beego/bee
 
-RUN apt-get install -y git
 RUN git clone https://github.com/tobegit3hub/tutorial-novnc.git /noVNC/
 
 ADD . /
