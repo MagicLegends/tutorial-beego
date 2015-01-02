@@ -13,6 +13,10 @@ RUN git clone https://github.com/tobegit3hub/tutorial-novnc.git /noVNC/
 RUN apt-get install -y firefox
 
 RUN apt-get install -y golang
+RUN mkdir /go
+ENV GOPATH /go
+ENV PATH $PATH:$GOPATH/bin
+
 RUN go get github.com/astaxie/beego
 RUN go get github.com/beego/bee
 
